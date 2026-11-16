@@ -1,0 +1,157 @@
+/* Email-code access form, shared by the landing page and /login. */
+.access-card,
+.access-btn {
+  --ink: #111928;
+  --soft: #4b5563;
+  --mute: #6b7280;
+  --line: #e5e7eb;
+  --accent: #147d70;
+}
+.access-card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow:
+    0 1px 2px rgb(17 25 40 / 0.04),
+    0 12px 32px -12px rgb(17 25 40 / 0.12);
+}
+.access-row {
+  display: flex;
+  gap: 8px;
+}
+.access-input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 15px;
+  background: #f9fafb;
+  color: var(--ink);
+  font-family: inherit;
+}
+.access-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(20 125 112 / 0.14);
+  background: #fff;
+}
+.access-code {
+  letter-spacing: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.access-btn {
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 18px;
+  background: var(--ink);
+  color: #fff !important;
+  font: 500 15px/1 inherit;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: background 0.15s;
+}
+.access-btn:hover:not(:disabled) {
+  background: #000;
+}
+.access-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.access-hint {
+  margin: 12px 2px 0;
+  font-size: 13px;
+  color: var(--mute);
+}
+.access-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 2px 2px 6px;
+}
+.access-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--soft);
+  margin: 0 2px 14px;
+  overflow-wrap: anywhere;
+}
+.access-text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.access-error {
+  margin: 10px 2px 0;
+  font-size: 13px;
+  color: #dc2626;
+}
+.access-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 2px 0;
+  font-size: 13px;
+  color: var(--mute);
+}
+.access-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.access-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.access-link:disabled {
+  color: var(--mute);
+  text-decoration: none;
+  cursor: default;
+  opacity: 1;
+}
+.access-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .access-row {
+    flex-direction: column;
+  }
+  .access-btn {
+    width: 100%;
+  }
+}
+
+.access-card > .access-input + .access-btn {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+}
